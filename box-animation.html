@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes moveAround {
+            /* from{
+                left: 0px;
+            }
+            to{
+                left: 400px;
+            } */
+            0%, 100% {
+                left: 0px;
+                top: 0px;
+                background-color: red;
+            }
+            25% {
+                left: 200px;
+                top: 0px;
+                background-color: green;
+            }
+            50% {
+                left: 200px;
+                top: 200px;
+                background-color: blue;
+                border-radius: 100px;
+            }
+            75% {
+                left: 0px;
+                top: 200px;
+                background-color: yellow;
+            }
+        }
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            animation-name: moveAround;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-direction: normal ;
+            /* animation-direction: alternate; */
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>

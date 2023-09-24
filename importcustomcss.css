@@ -1,0 +1,19 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+/* @import url('customfonts.css'); */
+
+.parent {
+    padding: 20px;
+    margin: 20px;
+    background-color: rgb(241, 226, 255);
+  }
+  
+  h2 {
+    color: blueviolet;
+  }
+
+  h2,
+  p {
+    /* font-family: Kenia, Nutino, sans-serif; */
+    font-family: 'Nutino', 'Dancing Script', cursive;
+  }
