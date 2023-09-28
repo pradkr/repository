@@ -29,6 +29,9 @@ label {
 input[type="text"]:focus {
     border: 3px solid rgb(230, 131, 91); /* choose a light and subtle color*/
 }
+input::placeholder {
+        color: rgb(213, 211, 211);
+      } 
     </style>
 </head>
 <body>
@@ -105,7 +108,7 @@ input[type="text"]:focus {
     <input type="text" name="name1">
     <br/>
     <label for="email1">Email</label>
-    <input type="email" name="email1" required>
+    <input type="email" name="email1" required placeholder="john@doe.com">
   
   </form>
 
