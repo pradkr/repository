@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+  font-family: 'Oswald', sans-serif;
+}
+
+.container {
+  background-color: #e2e2e2;
+  padding: 10px;
+  display: grid;
+  height: 100vw;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px 10px;
+  grid-template-areas: 
+  "header header header header"
+  "sidebar content content content"
+  "footer footer footer footer";
+}
+
+.item {
+  background-color: tomato;
+  padding: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+}
+
+.item-1 {
+    grid-area: header;
+}
+
+
+.item-2 {
+    grid-area: content;
+    background-image: url('./images/gta5.jpeg');
+    background-size: contain;
+}
+ 
+.item-3 {
+    grid-area: sidebar;
+    background-image: url('./images/pubg.jpeg');
+    background-size: cover;
+}
+ 
+.item-4 {
+    grid-area: footer;
+    background-image: url('./images/cod.jpeg');
+    background-size: cover;
+}
+
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">Top Games of 2020</div>
+        <div class="item item-2">Grand Theft Auto</div>
+        <div class="item item-3">PUBG</div>
+        <div class="item item-4">Call Of Duty Online</div>
+    </div>
+</body>
+</html>

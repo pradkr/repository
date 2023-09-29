@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+  font-family: 'Oswald', sans-serif;
+}
+
+.container {
+  background-color: #e2e2e2;
+  padding: 20px;
+  display: flex;
+}
+
+.item {
+  background-color: tomato;
+  height: 50px;
+  margin: 5px;
+  padding: 5px;
+  color: white;
+}
+.item-1 {
+    flex: 2;
+    order: 2;
+}
+ 
+.item-2 {
+    flex: 1;
+    order: 1;
+}
+ 
+.item-3 {
+    flex: 2;
+    order: 3;
+}
+ 
+.item-4 {
+    flex: 1;
+    order: 4;
+}
+ 
+.item-5 {
+    flex: 2;
+    order: 5;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">Apples</div>
+        <div class="item item-2">Oranges</div>
+        <div class="item item-3">Bananas</div>
+        <div class="item item-4">Grapes</div>
+        <div class="item item-5">Melons</div>
+      </div>
+    </body>
+</body>
+</html>
