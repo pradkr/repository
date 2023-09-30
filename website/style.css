@@ -10,12 +10,16 @@ body{
     background-color: white;
     border: 1px solid #ddd;
 }
+
+/* 
 .page-container{
+     margin-bottom: 70px; 
+} */
 
-}
-.nav{
+/* .nav{
 
-}
+} */
+
 nav{
     background-color: #222222;
     display: flex;
@@ -124,9 +128,55 @@ nav ul li a {
 .banner .heading small {
     font-size: 24px;
 }
+.maintext{
+font-size: 18px;
+padding: 12px;
+}
+.subtext {
+    display: flex;
+}
+.subtext div{
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+
+}
+
+.subtext .red {
+    background-color: #ff6363;
+}
+
+.subtext .yellow {
+    background-color: #f0a500;
+}
+.subtext .green {
+    background-color: #1eb2a6;
+}
+
+.quote {
+    display: block;
+    background-color: #eeeeee;
+    padding: 50px;
+    text-align: center;
+    font-style: italic;
+
+}
+.quote::before{
+    display: inline-block;
+    content: open-quote;
+    color: #d3d3d3;
+    font-size: 32px;
+}
+.quote::after{
+    display: inline-block;
+    content: close-quote;
+    color: #d3d3d3;
+    font-size: 32px;
+}
 
 .footer {
-    position: absolute;
+    /* position:relative; */
     left: 0;
     right: 0;
     bottom: 0;
