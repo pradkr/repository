@@ -30,3 +30,8 @@ const computeDistance = coords.flatMap(([p1,p2])=>calcDistance(p1,p2));
 
 console.log(`Even Coordinates: ${findEven}`);
 console.log(`Distance between points: ${computeDistance}`);
+
+
+//const numbers = [1,[2,3],[4,[5,[6,[7,8]]]]]
+//const flattenedArray = numbers.flat(4)
+//console.log(flattenedArray)

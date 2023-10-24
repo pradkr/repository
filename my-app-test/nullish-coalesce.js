@@ -7,4 +7,4 @@ console.log("computeOutcome =", computeOutcome)
 
 for (let x = 0; x > 0; x++) {
     console.log(x);
-  }
+}
