@@ -52,6 +52,7 @@ formEl.addEventListener('submit', function (evt) {
         return {
           name: el.getAttribute('name'),
           type: el.type,
+          //value:   el.value,   //by default checkbox returns value: "on" but if we want tp return boolen use checked insted of value
           value: el.type === 'checkbox' ? el.checked : el.value,
         };
     });

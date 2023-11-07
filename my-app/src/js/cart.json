@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "product": "Wine - Valpolicella Masi",
+      "cost": 13.6,
+      "quantity": 5
+    },
+    {
+      "id": 2,
+      "product": "Juice - Lime",
+      "cost": 5.98,
+      "quantity": 4
+    },
+    {
+      "id": 3,
+      "product": "Soup - Knorr, Chicken Gumbo",
+      "cost": 7.28,
+      "quantity": 3
+    },
+    {
+      "id": 4,
+      "product": "Soup - Campbells Beef Strogonoff",
+      "cost": 9.18,
+      "quantity": 2
+    },
+    {
+      "id": 5,
+      "product": "Lotus Rootlets - Canned",
+      "cost": 12.16,
+      "quantity": 2
+    }
+  ]
+  
