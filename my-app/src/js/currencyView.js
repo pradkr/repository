@@ -1,4 +1,4 @@
-import Row from './Row';
+import Row from './currencyRow.js';
 
 const totalQuantity = document.querySelector('.total-quantity');
 const totalCost = document.querySelector('.total-cost');
