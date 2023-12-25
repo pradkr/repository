@@ -1,12 +1,19 @@
+require('dotenv').config(); 
+
 // This code example assigns the MongoClient variable using 
 // object destructuring, introduced in Node.js v6. 
 // You can create an instance of a MongoClient without using 
 // object destructuring as shown in the following code:
 // const MongoClient = require("mongodb").MongoClient;
 
+
 const { MongoClient, ObjectId } = require("mongodb");
-const uri = process.env.MONGODB_URL;
+//const resp = await axios.get(`https://myapi.com/data?api_key=${process.env.REACT_APP_API_KEY}`);
+//const uri=`mongodb+srv://${process.env.REACT_APP_MONGODB_USER}:${process.env.REACT_APP_MONGODB_PSWD}@test.1qgfrhh.mongodb.net/?retryWrites=true&w=majority`
+const uri = process.env.REACT_APP_MONGODB_URL;
 dbName = 'test';
+console.log(uri);
+
 collectionName = 'grades';
 
 
@@ -17,9 +24,9 @@ async function run() {
     const db = client.db(dbName); //if not exist creates
     const collection = db.collection(collectionName); //if not exist creates
     
-    // Insertion
+    // // Insertion
     // //const insertLearner = { learner: 'John Doe',subject:'Math', score: 85};
-    // const insertedLearner = await collection.insertOne({ learner: 'John Doe',subject:'Math', score: 85});
+    // const insertedLearner = await collection.insertOne({ learner: 'Peter Parker',subject:'Math', score: 90});
     // console.log("Successfully inserted");
 
     // Updation
@@ -30,8 +37,8 @@ async function run() {
     // console.log(updateLearner);
 
     // // Read
-    // const fetchData = await collection.find({}).toArray();
-    // console.log(fetchData);
+    const fetchData = await collection.find({}).toArray();
+    console.log(fetchData);
 
     // // Delete
     // const deleteData = await collection.deleteOne({learner: "John Doe"})
@@ -62,9 +69,9 @@ async function run() {
     // console.log("updateMultiple ",updateMultiple);
 
     //Delete many
-    const deleteMultiple = await collection.deleteMany(
-             {score: {$lt: 55}}  );
-    console.log("deleteMultiple ",deleteMultiple);
+    // const deleteMultiple = await collection.deleteMany(
+    //          {score: {$lt: 55}}  );
+    // console.log("deleteMultiple ",deleteMultiple);
 
 
   } finally {
