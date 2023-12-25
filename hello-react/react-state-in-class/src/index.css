@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  position: absolute;
+  border: 1px solid black;
+  width: 800px;
+  height: 600px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+
+.input-holder {
+  position: absolute;
+  background: rgb(220, 239, 255);
+  height: 80px;
+  width: 800px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.input-holder > input {
+  font-size: 40px;
+  padding: 10px;
+  width: 765px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  border-bottom: 2px dashed #000;
+}
+
+.items-holder {
+  position: absolute;
+  width: 800px;
+  height: 520px;
+  top: 80px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.item {
+  position: relative;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 2px;
+}
+
+.item-name {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 30px;
+}

@@ -1,0 +1,37 @@
+
+
+Webpack 5 | Updates to devServerWhen defining the configuration for 'dev' mode, the video demonstrates the use of the 'contentBase' property within the devServerconfiguration. This was deprecated in Webpack 5 and you might get an error. Please modify the contents of webpack.dev.js as shown below:
+
+OLD CODE (As shown in the video)
+
+module.exports = merge(common, {
+	mode: 'development',
+	target: 'web',
+	devServer: {
+		port: 1234,
+		hot: true,
+		compress: true,
+		contentBase: resolve(__dirname, 'dist'),
+	},
+});
+
+
+
+REVISED CODE (As per WebPack 5)
+
+module.exports = merge(common, {
+	mode: 'development',
+	target: 'web',
+	devServer: {
+		port: 1234,
+		hot: true,
+		compress: true,
+		static: {
+			directory: resolve(__dirname, 'dist'),
+		},
+	},
+});
+
+
+
+Please implement the change demonstrated above to ensure Webpack works correctly. The change from contentBaseto staticin Webpack 5's devServerconfiguration was part of a broader effort to make the Webpack configuration more intuitive and streamlined. Here are a few reasons for this change:1.More Descriptive Naming: The term staticis more descriptive of its function. It clearly indicates that it's used for serving static files from a directory, which is what the contentBasewas used for.2.Configuration Simplification: Webpack 5 aimed to simplify and streamline its configuration options. Changing to staticwas part of this simplification, making it easier for developers to understand and configure their development server.3.Enhanced Functionality: The new staticoption in Webpack 5 comes with more capabilities than the old contentBase. For instance, it allows for more detailed configuration of static file serving, like specifying multiple static directories, setting static file serving options, etc.4.Consistency and Standardization: Webpack 5 introduced a number of breaking changes to standardize and bring consistency to its configuration API. This change falls under that umbrella, making the tool more consistent and predictable.

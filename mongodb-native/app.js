@@ -5,8 +5,7 @@
 // const MongoClient = require("mongodb").MongoClient;
 
 const { MongoClient, ObjectId } = require("mongodb");
-const uri =
-  "mongodb+srv://prad6g:aZf1KrTDy5NEH5Hh@test.1qgfrhh.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URL;
 dbName = 'test';
 collectionName = 'grades';
 

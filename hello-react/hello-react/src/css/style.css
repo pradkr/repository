@@ -1,0 +1,46 @@
+#app {
+  position: absolute;
+  width: 500px;
+  height: 160px;
+  border: 1px solid;
+  padding: 5px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+
+.top {
+  position: relative;
+  height: 60px;
+}
+
+.bottom {
+  position: relative;
+  height: 100px;
+  background-color: rgb(251, 255, 214);
+}
+
+#inputFld {
+  position: absolute;
+  width: 500px;
+  padding: 16px;
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 1.4em;
+  box-sizing: border-box;
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.1);
+}
+
+.output {
+  position: absolute;
+  font-size: 1.3em;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100px;
+  padding: 5px;
+  box-sizing: border-box;
+}
