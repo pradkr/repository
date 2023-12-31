@@ -12,10 +12,7 @@ const { MongoClient, ObjectId } = require("mongodb");
 //const uri=`mongodb+srv://${process.env.REACT_APP_MONGODB_USER}:${process.env.REACT_APP_MONGODB_PSWD}@test.1qgfrhh.mongodb.net/?retryWrites=true&w=majority`
 const uri = process.env.REACT_APP_MONGODB_URL;
 dbName = 'test';
-console.log(uri);
-
 collectionName = 'grades';
-
 
 async function run() {
   const client = new MongoClient(uri);
