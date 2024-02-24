@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* set correct box model */
+* {
+    box-sizing:border-box;
+}
+
+/* flexbox container */
+.holy-grail-flexbox {
+    display:flex;
+    flex-wrap:wrap;
+}
+
+/* columns (mobile) */
+.holy-grail-flexbox > * {
+    width:100%;
+    padding:1rem;
+}
+
+/* background colors */
+.holy-grail-flexbox > .header {background:#f97171}
+.holy-grail-flexbox > .main-content {background:#fff}
+.holy-grail-flexbox > .left-sidebar {background:#f5d55f}
+.holy-grail-flexbox > .right-sidebar {background:#c5ed77}
+.holy-grail-flexbox > .footer {background:#72c2f1}
+
+/* tablet breakpoint */
+@media (min-width:768px) {
+    .holy-grail-flexbox > .left-sidebar,
+    .holy-grail-flexbox > .right-sidebar {
+        width:50%;
+    }
+}
+
+/* desktop breakpoint */
+@media (min-width:1024px) {
+    .holy-grail-flexbox > .header {
+        order:-2; /* header first */
+    }
+    .holy-grail-flexbox > .left-sidebar {
+        /* left sidebar second (first in second row) */
+        order:-1;
+    }
+    .holy-grail-flexbox > .main-content {
+        width:50%;
+    }
+    .holy-grail-flexbox > .left-sidebar,
+    .holy-grail-flexbox > .right-sidebar {
+        width:25%;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="holy-grail-flexbox">
+        <header class="header">Header</header>
+        <main class="main-content">Main content</main>
+        <section class="left-sidebar">Left sidebar</section>
+        <aside class="right-sidebar">Right sidebar</aside>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+</html>

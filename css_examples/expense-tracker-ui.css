@@ -1,0 +1,61 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    height: 100%;
+  }
+  
+  .left, .right, .middle {
+    flex: 1; /* Divide remaining space equally */
+    padding: 1rem; /* Add some padding for content */
+  }
+  
+  .left {
+    background-color: #f0f0f0; /* Optional background color */
+    border-right: 1px solid #ddd; /* Optional border */
+  }
+  
+  .right {
+    background-color: #f0f0f0; /* Optional background color */
+    border-left: 1px solid #ddd; /* Optional border */
+  }
+  
+  .middle {
+    background-color: #fff; /* Optional background color */
+    display: flex; /* Enable flexbox for inner boxes */
+    flex-direction: row; /* Arrange boxes horizontally */
+    justify-content: space-around; /* Distribute boxes evenly with space */
+  }
+  
+  .inner-box {
+    flex: 1; /* Divide middle box space equally among inner boxes */
+    padding: 1rem; /* Add padding for inner content */
+    /* Add background colors or borders as needed */
+  }
+
+  .middle {
+    display: flex;
+    flex-direction: column; /* Stack boxes vertically */
+    justify-content: space-around; /* Distribute boxes evenly with space */
+  }
+  
+  .inner-box {
+    width: 100%; /* Match parent width */
+    /* Adjust height as needed */
+    /* Customize background colors, borders, etc. */
+  }
+
+  .middle {
+    position: relative; /* Enable absolute positioning */
+    overflow: visible; /* Prevent clipping of overlapping elements */
+  }
+  
+  .inner-box {
+    position: absolute; /* Position absolutely within middle box */
+    top: 0; /* Align to top edge of middle box */
+    /* Customize width, height, left/right positioning, and style */
+  }
