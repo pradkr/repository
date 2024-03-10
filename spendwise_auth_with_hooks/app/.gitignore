@@ -9,7 +9,7 @@ config.env
 /node_modules
 /.pnp
 .pnp.js
-
+/dump
 # testing
 /coverage
 

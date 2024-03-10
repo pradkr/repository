@@ -15,7 +15,7 @@
 //import ProtectedRoute from './components/ProtectedRoute';
 
 import React, {useState, useEffect} from 'react';
-import { BrowserRouter, Link, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './components/Login';
 import { GlobalProvider } from './context/GlobalState';
 import SignUp from './components/SignUp'
@@ -34,7 +34,8 @@ import { jwtDecode} from 'jwt-decode'
 
 function App() {
   const { token, setToken, deleteToken } = useToken();
-  const [ userEmail, setUserEmail ] = useState();
+  const [ userEmail, setUserEmail ] = useState();  
+  const [ userNameDisplay, setUserNameDisplay ] = useState();
   //console.log('inside App.js, token='+ JSON.stringify(token))
   //console.log('in app.js and token=', token)
   //const navigate = useNavigate();
@@ -55,7 +56,7 @@ function App() {
   useEffect(() => {
     //const token = localStorage.getItem('token');
     const token = sessionStorage.getItem('token');
-    console.log('in useEffect, token='+JSON.stringify(token));
+    //console.log('in useEffect, token='+JSON.stringify(token));
     if (token) {
       try {
         const user = jwtDecode(token, {header: false})
@@ -65,15 +66,15 @@ function App() {
           sessionStorage.removeItem('token')
           //navigate('/login', { replace: true })
         } else {
-          console.log('decoded token='+ JSON.stringify(user))
+          //console.log('decoded token='+ JSON.stringify(user))
           //populateQuote()
           setUserEmail(user.email);
-          console.log('user.email=' + user.email)
-          
+          setUserNameDisplay(user.name);
+          //console.log('user.email=' + user.email)
         }
       } catch(error) {
         //InvalidTokenError
-        console.log('Invalid token. ' + error + ''+ JSON.stringify(error) )
+        //console.log('Invalid token. ' + error + ''+ JSON.stringify(error) )
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -81,9 +82,10 @@ function App() {
   
    function logOut() {
     setToken(null);
-    setUserEmail(null)
-    //sessionStorage.removeItem(keyname);
-    deleteToken()
+    setUserEmail(null);
+    setUserNameDisplay(null);
+    deleteToken();
+    sessionStorage.removeItem('token');
   }
 
   // if(!token) {
@@ -97,56 +99,47 @@ function App() {
 
   return (
     <div className='holy-grail-flexbox'>
-    
-      {/* <h1>Application </h1> */}
       <BrowserRouter>
       <GlobalProvider>
         <header className='header'>
-          <Header />
-          {/* <h1 className='truncate'>Hello {token}</h1> */}
-          {/* <h1>{error}</h1> */}
-          <Link to="/home">Home</Link>
-          <Link to="/dashboard">Dashboard</Link>
-          <Link to="/register">Sign Up</Link>
-          {/* <Link to="/login">Login</Link> */}
-          { (!token) ? (      
-          <Link to="/login"> Login </Link>
-             ) : (
-           <div className='logged-in-user-section'>
-            <div className='truncate'>Hello {token}</div>
-             {/* <span > {user.name} </span> */}
-             <button onClick={() => logOut()}>Logout</button> 
-           </div>
-          )}
+          <Header token={token} name={userNameDisplay} setToken={setToken} logOut={logOut}/>
         </header> 
 
       <main className='main-content'>
-{ (token) ? ( <IncomeExpenses /> ) 
-: ( 
-        <Routes>
-          <Route path="/" exact element={<Login setToken={setToken} />} />
-          {/* <Route path="/dashboard" exact element={ <Dashboard /> } /> */}
-          <Route path="/register" exact element={<SignUp setToken={setToken} />} />
-          <Route path="/login" exact element={<Login setToken={setToken} />} />
-          {/* <Route path="/home" exact element={<Protected user={token}/>}>
-            <Route path="/home" exact element={<IncomeExpenses />}/>
-          </Route> */}
 
-        </Routes>
+{ (token) ? 
+        ( <IncomeExpenses /> ) 
+: ( 
+        <div className="box middle">
+          <Routes>
+            <Route path="/"         exact element={<Login  setToken={setToken} />} />
+            <Route path="/login"    exact element={<Login  setToken={setToken} />} />
+            <Route path="/signup" exact element={<SignUp setToken={setToken} />} />
+            {/* 
+            <Route path="/home"   exact element={<Protected user={token} />} >
+              <Route path="/home" exact element={<IncomeExpenses />} />
+            </Route> 
+            */}
+          </Routes>
+        </div>
 ) }
         
       </main>
 
-{ (userEmail) ? ( 
+
        <section className='left-sidebar'>
+       { (userEmail) ? ( 
          <TransactionList email={userEmail} />
+         ): null }
        </section>
-): null }
-{ (userEmail) ? (   
+
+ 
        <aside className='right-sidebar'>
+       { (userEmail) ? (  
          <AddTransaction email={userEmail}/>
+         ): null }
        </aside>
-): null }
+
      </GlobalProvider>
      <footer className='footer'>
        <Footer />

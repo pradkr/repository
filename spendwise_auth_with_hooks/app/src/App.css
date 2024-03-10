@@ -71,7 +71,10 @@ nav {
   justify-content: center;
   align-items: center;
 }
-
+.logged-in div {
+  /* margin: 5px; */
+  margin: 0px 5px 0px 5px;
+}
 .logged-in span {
   padding-left: 15px;
 }
@@ -83,7 +86,8 @@ nav {
 }
 
 .truncate {
-  width: 300px;
+  /* width: 300px; */
+  max-width: 300px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

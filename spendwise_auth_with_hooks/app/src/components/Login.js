@@ -52,11 +52,11 @@ export default function  Login({ setToken }) {
       <form onSubmit={handleSubmit}>
         <div className="form-control">
           <label htmlFor="email"> Email</label>
-          <input name="email" type="email" onChange={e => setUserName(e.target.value)}  placeholder="E-Mail"/>
+          <input name="email" type="email" onChange={e => setUserName(e.target.value)}  placeholder="E-Mail" required/>
         </div>
         <div className="form-control">
           <label htmlFor="password"> Password</label>
-          <input name="password" type="password" onChange={e => setPassword(e.target.value)} placeholder="Password"/>
+          <input name="password" type="password" onChange={e => setPassword(e.target.value)} placeholder="Password" required/>
         </div>
         <div><button type="submit">Submit</button></div>
       </form>

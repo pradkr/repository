@@ -9,23 +9,22 @@ export const AddTransaction = ({email}) => {
   const [amount, setAmount] = useState(0);
   const [trxnType, setTrxnType] = useState('expense');
   const [error, setError] = useState(false);
-  const { addTransaction } = useContext(GlobalContext);
   const [errorEmail, setEmailError] = useState(false);
 
-  console.log('in addTransactions, email=' + JSON.stringify(email) )
-
+  //console.log('in addTransactions, email=' + JSON.stringify(email) )
   if(!email){  
     setEmailError(true);
-    console.log('errorEmail='+errorEmail)
+    //console.log('No email found, errorEmail='+errorEmail)
   }
   
+  const { addTransaction } = useContext(GlobalContext);
 
   const onSubmit = e => {
     e.preventDefault();
 
     const newTransaction = {
       // id: Math.floor(Math.random() * 100000000),
-      //id: uuidv4(),
+      //id: uuidv4(), //mongodb will generate its own id
       email,
       text,
       amount: trxnType === 'expense' ? -amount: +amount,
