@@ -1,0 +1,74 @@
+@import "~antd/dist/antd.css";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+  background-color: rgb(92, 47, 47);
+}
+
+.app-title {
+  position: relative;
+  color: #fff;
+  font-size: 40px;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+  float: left;
+  margin-right: 100px;
+}
+
+.home-content {
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+}
+
+.access-menu {
+  position: relative;
+  float: right;
+}
+
+.content-box {
+  min-height: 800px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header-menu {
+  background-color: transparent;
+  line-height: 60px;
+  border-bottom: none;
+}
+
+.home-image {
+  width: 80%;
+  height: 320px;
+  background-image: url("./food_home.jpg");
+  background-size: cover;
+}
+
+.cook-time {
+  position: absolute;
+  top: 80px;
+}
+
+.rating {
+  position: relative;
+  width: 150px;
+}
+
+.star {
+  position: relative;
+  background-image: url("./images/star.png");
+  background-size: cover;
+  width: 19px;
+  height: 19px;
+  top: 10px;
+  display: inline-block;
+}
